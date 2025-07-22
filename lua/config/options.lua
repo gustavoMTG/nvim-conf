@@ -1,6 +1,8 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+vim.opt.colorcolumn = { "80", "120" }
+
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
