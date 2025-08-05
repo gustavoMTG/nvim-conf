@@ -30,11 +30,22 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 vim.diagnostic.config({
-  virtual_text = true,  -- Disable inline errors
-  signs = false,          -- Keep signs in the gutter (optional)
-  underline = true,      -- Keep underlines for errors (optional)
-  update_in_insert = false,  -- Don't update diagnostics while typing
+  -- virtual_text = true,  -- Disable inline errors
+  -- signs = false,          -- Keep signs in the gutter (optional)
+  -- underline = true,      -- Keep underlines for errors (optional)
+  -- update_in_insert = false,  -- Don't update diagnostics while typing
+  float = {
+    focusable = true,
+    style = "minimal",
+    border = "rounded",
+    source = "always",
+    header = "",
+    prefix = "",
+    max_width = 80, -- adjust width
+    wrap = true, -- force wrapping
+  },
 })
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
 
 -- tmux integration
 vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
